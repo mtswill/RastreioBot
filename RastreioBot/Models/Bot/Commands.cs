@@ -84,6 +84,7 @@ namespace RastreioBot.Models.Bot
         {
             var commandList = new List<string>
             {
+                "2",
                 "4"
             };
 
