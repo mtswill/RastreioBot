@@ -32,12 +32,7 @@ namespace RastreioBot.Services
         }
 
         public async Task SendMessageAsync(string message)
-        {
-            var response = await _httpClient.PostAsync($"sendMessage?chat_id={_chatId}&text={message}", null);
-
-            if (!response.IsSuccessStatusCode)
-                return;
-        }
+            => await _httpClient.PostAsync($"sendMessage?chat_id={_chatId}&text={message}", null);
 
         public async Task ProcessMessagesAsync(IServiceProvider serviceProvider, GetUpdates updates)
         {
@@ -107,12 +102,7 @@ namespace RastreioBot.Services
         }
 
         public async Task DeleteMessageAsync(int messageId)
-        {
-            var response = await _httpClient.PostAsync($"deleteMessage?chat_id={_chatId}&message_id={messageId}", null);
-
-            if (!response.IsSuccessStatusCode)
-                return;
-        }
+            => await _httpClient.PostAsync($"deleteMessage?chat_id={_chatId}&message_id={messageId}", null);
 
         public void SetLastMessageId(int messageId)
             => _lastMessageId = messageId;
